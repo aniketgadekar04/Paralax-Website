@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrap{
+    height: 100vh;
+    overflow-x: hidden;
+    /* img x axis ke bahar ja rahi thi isliye hiden kiya */
+    overflow-y: auto;
+    perspective: 10px;
+    /* 3d efect 
+    perspective se z is equal plane aur ankho ka 
+    distance same hoga. */
+}
+
+.container{
+    position: relative;
+    /* absolute position ke liye relative kiya. */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background{
+    transform: translateZ(-40px);
+    
+    /* img dur le jane ke liye transz kiya */
+    scale: 5;
+    /* dur ki img badi karne ke lie scale use karenge. */
+}
+
+
+.foreground{
+    transform: translateZ(-20px);
+    scale: 3;
+}
+.background, .foreground{
+    position: absolute;
+    /* ek dusre par img overlap kare isliye use kiya absolute */
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* object-fit: cover; */
+    /* fit img in container */
+}
